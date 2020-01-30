@@ -26,7 +26,10 @@ camera = PiCamera()
 bot = telepot.Bot('BotToken')
 bot.message_loop(handle)
 print('Bot boot\'s...')
-bot.sendMessage(275911827, 'Bot boot\'s')
+
+for user in accepted_users:
+    bot.sendMessage(user, 'Bot boot\'s')
+
 while 1:
      time.sleep(2) #It accepts messages for each 2 seconds. This is editable, I used
                    #2 secs mainly beacuse it's the time the Pi camera needs between two pics.
