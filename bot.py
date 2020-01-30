@@ -14,7 +14,7 @@ def handle(msg):
     print('Got command: ' + command + 'from chat ID: ' + str(chat_id))
     
     if chat_id in accepted_users:
-        if command == 'foto':
+        if command == 'photo':
             camera.capture('/home/pi/Desktop/image.jpg')
             photo = open('/home/pi/Desktop/image.jpg', 'rb')
             bot.sendPhoto(chat_id, photo)
@@ -23,7 +23,7 @@ def handle(msg):
 
 camera = PiCamera()
 
-bot = telepot.Bot('BotToken')
+bot = telepot.Bot('BotToken') #Change this with your alphanumeric token (between the ' ')
 bot.message_loop(handle)
 print('Bot boot\'s...')
 
